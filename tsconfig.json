@@ -2,11 +2,12 @@
    "compilerOptions": {
      "outDir": "./dist/", // куда сборку собираем
      "noImplicitAny": true, // подсвечивают все месте где не указан тип, на крайний случай используем any
-     "module": "es6", //модульная сборка, на backend исполь-ют commonJS
+     "module": "esnext", //модульная сборка, на backend исполь-ют commonJS
      "target": "es5",  // в какую спецификацию компилируем: для поддердкм большинства браузеров ecmascript
-     "jsx": "react", // позволяет писать html(return ( <div onClick><div>)) прямо в функциях как мы привыкли в реакт
+     "jsx": "react-jsx", // позволяет писать html(return ( <div onClick><div>)) прямо в функциях как мы привыкли в реакт
      "allowJs": true, // компилятор будет обрабатывать не только ts файлы, но и js
      "moduleResolution": "node", //
+     "baseUrl": ".",  // для абсолютного импорта
      "esModuleInterop": true, // позволяет работать с пакетами, кот. используют common js как с обычными пакетами с помощью import
      // ( require() module.export ) = common js
      // import Moment from 'moment'
