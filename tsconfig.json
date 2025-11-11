@@ -8,6 +8,9 @@
      "allowJs": true, // компилятор будет обрабатывать не только ts файлы, но и js
      "moduleResolution": "node", //
      "baseUrl": ".",  // для абсолютного импорта
+     "paths": {
+      "*": ["./src/*"]
+     },
      "esModuleInterop": true, // позволяет работать с пакетами, кот. используют common js как с обычными пакетами с помощью import
      // ( require() module.export ) = common js
      // import Moment from 'moment'
@@ -23,3 +26,6 @@
     }
   }
  } 
+
+
+ //		"prefix": "crc",
