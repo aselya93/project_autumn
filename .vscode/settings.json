@@ -1,0 +1,15 @@
+{
+   "i18n-ally.localesPaths": [
+      "public/locales",
+      "src/shared/config/i18n"
+   ],
+   "i18n-ally.extract.ignoredByFiles": {
+      "src/pages/MainPage/ui/MainPage.tsx": [
+         "Главная страница"
+      ]
+   },
+   "i18n-ally.extract.ignored": [
+      "Главная страница"
+   ],
+   "i18n-ally.keystyle": "nested"
+}

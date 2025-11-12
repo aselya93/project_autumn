@@ -8,6 +8,27 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
     use: ["@svgr/webpack"],
   };
 
+  const babelLoader = {
+    test: /\.(js|jsx|tsx)$/,
+    exclude: /node_modules/,
+    use: {
+      loader: "babel-loader",
+      options: {
+        presets: ["@babel/preset-env"],
+        "plugins": [
+          [
+            "i18next-extract",
+             {
+              locales: ['ru','en'],
+              keyAsDefaultValue: true //вытаскивает не только ключи из кода, но и автом.подставлять в качестве значения - ключ
+            }
+          ],
+
+        ]
+      },
+    },
+  };
+
   const cssLoader = {
     test: /\.s[ac]ss$/i,
     use: [
@@ -43,5 +64,5 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
     ],
   };
 
-  return [typescriptLoader, cssLoader, fileLoader, svgLoader ];
+  return [fileLoader, svgLoader, babelLoader, typescriptLoader, cssLoader];
 }
