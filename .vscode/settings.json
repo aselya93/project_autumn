@@ -1,4 +1,5 @@
 {
+    // i18n настройки
    "i18n-ally.localesPaths": [
       "public/locales",
       "src/shared/config/i18n"
@@ -13,54 +14,64 @@
    ],
    "i18n-ally.keystyle": "nested",
 
-   {
-      "terminal.integrated.sendKeybindingsToShell": true,
-      "workbench.iconTheme": "material-icon-theme",
-      "auto-rename-tag.activationOnLanguage": ["*"],
-      "editor.formatOnSave": false,
-      "git.autofetch": true,
-      "material-icon-theme.folders.color": "#26a69a",
-      "material-icon-theme.files.color": "#26a69a",
-      "material-icon-theme.activeIconPack": "react_redux",
-      "editor.stickyScroll.enabled": true,
-      "workbench.preferredLightColorTheme": "Default Dark Modern",
-      "workbench.colorCustomizations": {
-      "terminal.foreground": "#2fae9b",
-      "terminalCursor.background": "#0000ff48",
-      "terminalCursor.foreground": "#0fc6db"
+    
+  // TypeScript/JavaScript настройки
+  "typescript.format.insertSpaceAfterOpeningAndBeforeClosingTemplateStringBraces": false,
+  "javascript.format.insertSpaceAfterOpeningAndBeforeClosingTemplateStringBraces": false,
+
+  // Форматирование и сохранение
+"editor.formatOnSave": true,
+"editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "explicit",
+       "source.fixAll.stylelint": "explicit"
       },
-      "workbench.colorTheme": "Material Theme",
-      "githubIssues.queries": [
-      {
-      "label": "My Issues",
-      "query": "default"
-      },
-      {
-      "label": "Created Issues",
-      "query": "author:${user} state:open repo:${owner}/${repository} sort:created-desc"
-      },
-      {
-      "label": "Recent Issues",
-      "query": "state:open repo:${owner}/${repository} sort:updated-desc"
-      }
-      ],
-      "githubPullRequests.createOnPublishBranch": "never",
-      "workbench.settings.applyToAllProfiles": [
-      
-      ],
-      "eslint.enable": true,
-      "editor.codeActionsOnSave": {
-      "source.fixAll.eslint": "explicit"
-      },
-      "eslint.options": { "overrideConfigFile": "./.eslintrc.js" },
-      "eslint.nodePath": "./node_modules",
-      "eslint.validate": [
-      "javascript",
-      "javascriptreact",
-      "html",
-      "typescript",
-      "typescriptreact"
-      ],
-      "eslint.codeActionsOnSave.rules": null,
-      
+
+// Stylelint настройки
+"[scss]": {
+   "editor.defaultFormatter": "stylelint.vscode-stylelint",
+   "editor.formatOnSave": true
+},
+"[css]": {
+"editor.defaultFormatter": "stylelint.vscode-stylelint",
+"editor.formatOnSave": true
+},
+"css.validate": false,
+"less.validate": false,
+"scss.validate": false,
+"stylelint.enable": true,
+"stylelint.validate": [
+"css",
+"scss"
+],
+
+  // ESLint настройки - Проверяет качество кода, находит баги, исправляет ошибки логики
+  "eslint.enable": true,
+"eslint.options": { "overrideConfigFile": "./.eslintrc.js" },
+"eslint.validate": [
+"javascript",
+"javascriptreact",
+"html",
+"typescript",
+"typescriptreact"
+],
+"eslint.format.enable": false, // Важно: отключаем форматирование ESLint,
+//Только находит и исправляет ошибки, Prettier из глоабльных: Отвечает за форматирование 
+//(отступы, кавычки, переносы строк) и не конфликтуют.
+
+"auto-rename-tag.activationOnLanguage": ["*"], //Автом. переименовывает парный HTML/JSX тег
+"git.autofetch": true,
+"material-icon-theme.activeIconPack": "react_redux",
+"editor.stickyScroll.enabled": true,
+"workbench.colorCustomizations": {
+"terminal.foreground": "#260e88",
+"terminalCursor.background": "#0000ff48",
+"terminalCursor.foreground": "#10c9de"
+},
+"cSpell.words": [
+   "ВИНДОУС",
+   "shch"
+],
+
+
 }
+

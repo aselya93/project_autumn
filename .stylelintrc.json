@@ -1,0 +1,27 @@
+{
+  "extends": [
+  "stylelint-config-standard-scss"
+  ],
+  "plugins": [
+  "stylelint-order"
+  ],
+  "rules": {
+  "indentation": [4],
+  "selector-class-pattern": null,
+  "unit-no-unknown": [
+  true,
+  {
+  "ignoreUnits": ["dvh"]
+  }
+  ],
+  "order/order": [
+      "dollar-variables",
+      "custom-properties",
+      "declarations",
+      "rules",
+      "at-rules"
+    ],
+      "scss/double-slash-comment-whitespace-inside": "always",
+    "comment-whitespace-inside": "always"
+  }
+  }
